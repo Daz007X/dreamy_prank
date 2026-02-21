@@ -172,6 +172,3 @@
 [data-sonner-toast][data-state="closed"] {
     animation: toast-out 0.2s ease-in forwards;
 }
-.fill-mode-forwards {
-    animation-fill-mode: forwards;
-}

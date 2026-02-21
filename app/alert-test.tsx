@@ -27,7 +27,7 @@ export function AlertDemo() {
           bg-white dark:bg-slate-950
           border-green-500
           text-green-900 dark:text-green-50
-          duration-500
+          duration-1000
           ${
             isClosing
               ? "animate-out fade-out slide-out-to-top-4 fill-mode-forwards"
