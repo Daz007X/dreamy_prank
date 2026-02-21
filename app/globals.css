@@ -124,3 +124,54 @@
         @apply bg-background text-foreground;
     }
 }
+.transition-theme,
+.transition-theme * {
+    transition:
+        background-color 0.5s ease,
+        border-color 0.5s ease,
+        color 0.5s ease,
+        fill 0.5s ease,
+        stroke 0.5s ease !important;
+}
+
+/* ❌ ยกเว้นพวกที่ ไม่ต้องการ transition (เพื่อประสิทธิภาพ) */
+.transition-theme .map-container,
+.transition-theme .map-container * {
+    transition: none !important;
+}
+
+/* Fade in */
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade out */
+@keyframes toast-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+/* ใช้ data-state ของ sonner */
+[data-sonner-toast][data-state="open"] {
+    animation: toast-in 0.25s ease-out forwards;
+}
+
+[data-sonner-toast][data-state="closed"] {
+    animation: toast-out 0.2s ease-in forwards;
+}
+.fill-mode-forwards {
+    animation-fill-mode: forwards;
+}

@@ -13,10 +13,17 @@ import { Camera } from "lucide-react";
 import { AccordionDemo } from "./acc";
 import { DataTable } from "./table";
 import { payments, columns } from "./db-table";
+import { AlertDemo } from "./alert-test";
+import { ModeToggle } from "./Theme";
+import { SonnerDemo } from "./sonnar";
 
 export default function Home() {
   return (
     <div>
+      <SonnerDemo />
+
+      <AlertDemo />
+      <ModeToggle />
       <div>
         <DataTable columns={columns} data={payments} />
         <AccordionDemo />
@@ -29,19 +36,14 @@ export default function Home() {
           />
           <CardHeader>
             <CardAction>
-              <Badge
-                variant="secondary"
-                className="bg-amber-300 hover:bg-amber-200"
-              >
-                Thug
-              </Badge>
+              <Badge variant="thug">Thug</Badge>
             </CardAction>
             <CardTitle>
               <Camera />
               DreamyBullXXX
             </CardTitle>
             <CardDescription>
-              Let's see The best of the best cum professer, Will help you edging
+              Lets see The best of the best cum professer, Will help you edging
               to ultimate the gooning technical.
             </CardDescription>
           </CardHeader>
