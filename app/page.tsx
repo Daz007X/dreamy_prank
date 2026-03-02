@@ -13,6 +13,7 @@ import { Globe, Clock } from "lucide-react";
 import { worldCategories } from "@/lib/world-data";
 import { StatCategoryCard } from "@/components/stat-category-card";
 import { LiveClock } from "@/components/live-clock";
+import { AvatarWithBadge } from "@/components/sample";
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -24,6 +25,7 @@ export default function HomePage() {
 
   return (
     <SidebarProvider>
+      
       <AppSidebar
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
@@ -31,11 +33,14 @@ export default function HomePage() {
       <SidebarInset>
         {/* Top Navbar */}
         <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center justify-between border-b bg-background/80 backdrop-blur-sm px-4">
+          
           <div className="flex items-center gap-2">
+            
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Globe className="h-4 w-4 text-emerald-400" />
             <span className="font-semibold text-sm hidden sm:inline">
+              
               World Monitor
             </span>
           </div>
@@ -43,8 +48,10 @@ export default function HomePage() {
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Clock className="h-3.5 w-3.5" />
               <LiveClock />
+              <ModeToggle />
+              <AvatarWithBadge />
             </div>
-            <ModeToggle />
+            
           </div>
         </header>
 
@@ -77,6 +84,7 @@ export default function HomePage() {
           </div>
         </main>
       </SidebarInset>
+      
     </SidebarProvider>
   );
 }
